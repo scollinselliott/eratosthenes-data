@@ -33,7 +33,8 @@ century BCE.
 ### Determinative Events for Dating Dressel 1B Amphorae
 
 The squared displacement of Dr. 1B amphora is contained in the file
-[sq_disp_20250628](sq_disp_20250628.rda):
+[sq_disp_20250628](sq_disp_20250628.rda). Using default constraints of
+$\alpha = -5000, \omega = 1950$:
 
 |                   |    sq_disp | disp_MCmean | disp_MCSE |
 |:------------------|-----------:|------------:|----------:|
