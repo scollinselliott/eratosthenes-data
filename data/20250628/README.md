@@ -1,5 +1,5 @@
 
-**Download: [eda20250628.rda](data/eda20250628.rda)**
+**Download: [eda20250628.rda](eda20250628.rda)**
 
 The following `list` objects of relative sequences, absolute
 constraints, and finds data are contained in this `rda` file:
@@ -72,7 +72,7 @@ Parnell 2008) with the IntCal20 atmospheric data (Reimer et al. 2020).
 
 | id                   | assoc                 | Reference                                                        | Notes                                    |
 |:---------------------|:----------------------|:-----------------------------------------------------------------|:-----------------------------------------|
-| `"Carthage_Destr_1"` | `""Byrsa II B 19.2""` |                                                                  |                                          |
+| `"Carthage_Destr_1"` | `"Byrsa II B 19.2"` |                                                                  |                                          |
 | `"Planier_A_abs"`    | `"Planier A"`         | Parker (1992), p. 315; Corsi-Sciallano and Liou (1985), p. 17-25 | 1-15 CE, Conventional date of shipwreck. |
 
 # Finds
