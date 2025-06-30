@@ -30,6 +30,49 @@ Finds note: if one attributes Dr. 1B amphora to the wreck of Isla
 Pedrosa, the date of that type is pulled heavily toward the mid-2nd
 century BCE.
 
+### Determinative Events for Dating Dressel 1B Amphorae
+
+The squared displacement of Dr. 1B amphora is contained in the file
+[sq_disp_20250628](sq_disp_20250628.rda):
+
+|                   |    sq_disp | disp_MCmean | disp_MCSE |
+|:------------------|-----------:|------------:|----------:|
+| RH_A08_US_5182    |  771021.16 |     -967.06 |     11.89 |
+| VERA-6082a        |       0.88 |      -88.04 |      1.60 |
+| VERA-6082b        |      15.04 |      -85.10 |      1.43 |
+| VERA-6082c        |       1.23 |      -87.87 |      1.38 |
+| VERA-6082d        |       5.85 |      -91.40 |      1.67 |
+| OxA-31836         |       9.78 |      -85.85 |      1.44 |
+| OxA-31877         |       5.77 |      -91.38 |      1.57 |
+| OxA-32005         |       0.54 |      -89.72 |      1.57 |
+| OxA-32006         |       0.20 |      -89.43 |      1.58 |
+| OxA-32794         |       1.08 |      -87.94 |      1.33 |
+| OxA-32795         |       0.98 |      -87.99 |      1.46 |
+| OxA-32796         |       0.34 |      -88.40 |      1.47 |
+| Carthage_Destr_1  |      64.00 |      -80.98 |      1.62 |
+| Planier_A_abs     | 1308926.80 |     1055.10 |     12.57 |
+| Mazotos           |  273963.21 |     -612.40 |     16.83 |
+| El Sec            |  277931.57 |     -616.17 |     18.91 |
+| Filicudi F        |       8.08 |      -91.82 |      1.59 |
+| Tour Fondue       |       0.07 |      -89.25 |      1.26 |
+| Cabrera 2         |      23.76 |      -93.86 |      1.63 |
+| Tour d’Agnello    |       0.19 |      -89.42 |      1.40 |
+| Grand Congloué A  |       0.22 |      -89.45 |      1.43 |
+| Sanguinaires A    |       0.13 |      -89.34 |      1.42 |
+| Byrsa II B 19.4   |       8.82 |      -91.95 |      1.64 |
+| Lazaret           |       8.13 |      -91.83 |      1.57 |
+| Byrsa II B 19.2   |      81.15 |      -79.97 |      1.27 |
+| Héliopolis B      |      10.30 |      -92.19 |      1.60 |
+| Punta Scaletta    |     104.94 |      -99.23 |      1.53 |
+| Isla Pedrosa      |      51.21 |      -96.14 |      1.50 |
+| Cavalière         |      18.01 |      -93.23 |      1.44 |
+| Madrague de Giens | 5160037.45 |    -2360.55 |     17.48 |
+| Rirha US 5182     | 1786038.45 |    -1425.41 |     11.54 |
+| Planier C         |       7.46 |      -91.71 |      1.32 |
+| Rirha US 5154     |     413.34 |      -68.65 |      1.60 |
+| Cap Béar C        |       0.61 |      -88.20 |      1.36 |
+| Planier A         | 1683627.58 |     1208.56 |     10.76 |
+
 # Sequences
 
 Ids are not retained in the sequences object `contexts_20250628`, but
@@ -70,10 +113,10 @@ Parnell 2008) with the IntCal20 atmospheric data (Reimer et al. 2020).
 
 # *Termini ante quos*
 
-| id                   | assoc                 | Reference                                                        | Notes                                    |
-|:---------------------|:----------------------|:-----------------------------------------------------------------|:-----------------------------------------|
+| id                   | assoc               | Reference                                                        | Notes                                    |
+|:---------------------|:--------------------|:-----------------------------------------------------------------|:-----------------------------------------|
 | `"Carthage_Destr_1"` | `"Byrsa II B 19.2"` |                                                                  |                                          |
-| `"Planier_A_abs"`    | `"Planier A"`         | Parker (1992), p. 315; Corsi-Sciallano and Liou (1985), p. 17-25 | 1-15 CE, Conventional date of shipwreck. |
+| `"Planier_A_abs"`    | `"Planier A"`       | Parker (1992), p. 315; Corsi-Sciallano and Liou (1985), p. 17-25 | 1-15 CE, Conventional date of shipwreck. |
 
 # Finds
 
