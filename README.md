@@ -24,8 +24,8 @@ any relevant code, as well as the dataset itself.
 
 As noted in the documentation of `saveRDS`, the `rds` format is not
 suitable as an interchange format. Hence, `rda` format is used for
-storing data for `eratosthenes`, which also preferable as `rda` has the
-ability to store multiple objects. object names are retained in `rda`
+storing data for `eratosthenes`, which is also preferable as `rda` has the
+ability to store multiple objects. Object names are retained in `rda`
 files, which have the potential to overwrite objects in active R memory.
 To try to prevent this, each named object is appended with the date of
 its posting.
