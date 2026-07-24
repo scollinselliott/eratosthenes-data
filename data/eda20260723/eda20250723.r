@@ -21,8 +21,9 @@ upload_csv <- function(filename) {
     return(mat)
 }
 
-ser_aleria <- upload_csv("caa2025_ser_aleria.csv")
-ser_lattara <- upload_csv("caa2025_ser_lattara.csv")
+## from eda20251001
+ser_aleria <- upload_csv("caa2025_ser_aleria.csv") 
+ser_lattara <- upload_csv("caa2025_ser_lattara.csv") 
 ser_shipwrecks <- upload_csv("caa2025_ser_shipwrecks.csv")
 
 #################################################
