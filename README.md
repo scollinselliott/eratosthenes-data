@@ -7,7 +7,7 @@ western and central Mediterranean, ca. 4th - 1st centuries BCE. These chronologi
 Archaeological events and finds beyond that stated scope necessarily need to be included as part of the conditional relationships behind
 dating relative events.
 
-This project is ongoing. Datasets are uploaded as they are completed, using git to log changes from each previous dataset. The current development dataset is [eda20250724](data/eda20250724).
+This project is ongoing. Datasets are uploaded as they are completed, using git to log changes from each previous dataset. The current development dataset is [eda20250723](data/eda20250723).
 
 ## Introduction
 
