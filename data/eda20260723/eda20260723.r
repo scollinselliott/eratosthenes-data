@@ -22,13 +22,16 @@ upload_csv <- function(filename) {
 }
 
 ## from eda20251001
-ser_lattara <- upload_csv("caa2025_ser_lattara.csv") 
-ser_shipwrecks <- upload_csv("caa2025_ser_shipwrecks.csv")
+setwd("..")
+ser_lattara <- upload_csv("eda20251001/caa2025_ser_lattara.csv") 
+ser_shipwrecks <- upload_csv("eda20251001/caa2025_ser_shipwrecks.csv")
 
-## add new
-ser_aleria <- upload_csv("ser_aleria_2026.csv") 
+## add new seriations
+setwd("eda20260723")
+ser_aleria <- upload_csv("ser_aleria_20260723.csv") # revised from previous
 ser_meligunis_lipara_ii <- upload_csv("ser_meligunis_lipara_ii.csv")
 ser_leptis_magna_theater_necr <- upload_csv("ser_leptis_magna_theater_necr.csv")
+write.table(im_long(ser_leptis_magna_theater_necr), file = "lep2.csv", row.names = FALSE, col.names = FALSE, sep = ",") 
 
 #################################################
 
@@ -258,9 +261,9 @@ seq210 <- c("Lattara US 35113", "Lattara US 35222")
 seq211 <- c("Rirha US 5182", "Rirha US 5154")
 seq212 <- c("Byrsa II B 19.4", "Byrsa II B 19.2")
 seq213 <- c("Rirha US 5154", "Planier A")
-seq214 <- c("El Sec", "Filicudi F", "Tour Fondue", "Cabrera 2", "Tour d'Agnello", "Sanguinaires A", "Lazaret")
+seq214 <- c("Mazotos", "El Sec", "Filicudi F", "Tour Fondue", "Cabrera 2", "Tour d'Agnello", "Sanguinaires A", "Lazaret")
 seq215 <- c("Cabrera 2", "Grand Congloué A", "Lazaret", "Byrsa II B 19.2", "Punta Scaletta", "Illa Pedrosa", "Cavalière", "Madrague de Giens", "Planier C", "Planier A")
-seq216 <- c("Mazotos", "El Sec")
+
 seq217 <- c("Veille-Toulouse - Fosse 40", "Veille-Toulouse - Fosse 40 sup.")
 
 ## meligunis-lipara ii necropolis contrada diana
@@ -271,7 +274,7 @@ seq220 <- c("Lipari Necr. Contrada Diana T. 222", "Lipari Necr. Contrada Diana T
 seq221 <- c("Lipari Necr. Contrada Diana T. 223", "Lipari Necr. Contrada Diana T. 160")
 seq222 <- c("Lipari Necr. Contrada Diana T. 223", "Lipari Necr. Contrada Diana T. 161")
 seq223 <- c("Lipari Necr. Contrada Diana T. 347", "Lipari Necr. Contrada Diana T. 300")
-seq224 <- c("Lipari Necr. Contrada Diana T. 416", "Lipari Necr. Contrada Diana T. 414", "Lipari Necr. Contrada Diana T. 409"),
+seq224 <- c("Lipari Necr. Contrada Diana T. 416", "Lipari Necr. Contrada Diana T. 414", "Lipari Necr. Contrada Diana T. 409")
 seq225 <- c("Lipari Necr. Contrada Diana T. 416", "Lipari Necr. Contrada Diana T. 412")
 
 ## meligunis-lipara ii necropolis contrada diana - seriation
@@ -280,14 +283,20 @@ seq226 <- rownames(ser_meligunis_lipara_ii)
 ## leptis magna - necropolis under the theater - seriation
 seq227 <- rownames(ser_leptis_magna_theater_necr)
 
+#################################################
+
 ## compile all sequences into list
 
 contexts_20260723 <- list(
   # from caa2025
-  seq001, seq002, seq003, seq004, seq005, seq006, seq007, seq008, seq009, seq010, seq011, seq012, seq013, seq014, seq015, seq016, seq017, seq018, seq019, seq020, seq021, seq022, seq023, seq024, seq025, seq026, seq027, seq028, seq029, seq030, seq031, seq032, seq033, seq034, seq035, seq036, seq037, seq038, seq039, seq040, seq041, seq042, seq043, seq044, seq045, seq046, seq047, seq048, seq049, seq050, seq051, seq052, seq053, seq054, seq055, seq056, seq057, seq058, seq059, seq060, seq061, seq062, seq063, seq064, seq065, seq066, seq067, seq068, seq069, seq070, seq071, seq072, seq073, seq074, seq075, seq076, seq077, seq078, seq079, seq080, seq081, seq082, seq083, seq084, seq085, seq086, seq087, seq088, seq089, seq090, seq091, seq092, seq093, seq094, seq095, seq096, seq097, seq098, seq099, seq100, seq101, seq102, seq103, seq104, seq105, seq106, seq107, seq108, seq109, seq110, seq111, seq112, seq113, seq114, seq115, seq116, seq117, seq118, seq119, seq120, seq121, seq122, seq123, seq124, seq125, seq126, seq127, seq128, seq129, seq130, seq131, seq132, seq133, seq134, seq135, seq136, seq137, seq138, seq139, seq140, seq141, seq142, seq143, seq144, seq145, seq146, seq147, seq148, seq149, seq150, seq151, seq152, seq153, seq154, seq155, seq156, seq157, seq158, seq159, seq160, seq161, seq162, seq163, seq164, seq165, seq166, seq167, seq168, seq169, seq170, seq171, seq172, seq173, seq174, seq175, seq176, seq177, seq178, seq179, seq180, seq181, seq182, seq183, seq184, seq185, seq186, seq187, seq188, seq189, seq190, seq191, seq192, seq193, seq194, seq195, seq196, seq197, seq198, seq199, seq200, seq201, seq202, seq203, seq204, seq205, seq206, seq207, seq208, seq209, seq210, seq211, seq212, seq213, seq214, seq215, seq216, seq217,
+  seq001, seq002, seq003, seq004, seq005, seq006, seq007, seq008, seq009, seq010, seq011, seq012, seq013, seq014, seq015, seq016, seq017, seq018, seq019, seq020, seq021, seq022, seq023, seq024, seq025, seq026, seq027, seq028, seq029, seq030, seq031, seq032, seq033, seq034, seq035, seq036, seq037, seq038, seq039, seq040, seq041, seq042, seq043, seq044, seq045, seq046, seq047, seq048, seq049, seq050, seq051, seq052, seq053, seq054, seq055, seq056, seq057, seq058, seq059, seq060, seq061, seq062, seq063, seq064, seq065, seq066, seq067, seq068, seq069, seq070, seq071, seq072, seq073, seq074, seq075, seq076, seq077, seq078, seq079, seq080, seq081, seq082, seq083, seq084, seq085, seq086, seq087, seq088, seq089, seq090, seq091, seq092, seq093, seq094, seq095, seq096, seq097, seq098, seq099, seq100, seq101, seq102, seq103, seq104, seq105, seq106, seq107, seq108, seq109, seq110, seq111, seq112, seq113, seq114, seq115, seq116, seq117, seq118, seq119, seq120, seq121, seq122, seq123, seq124, seq125, seq126, seq127, seq128, seq129, seq130, seq131, seq132, seq133, seq134, seq135, seq136, seq137, seq138, seq139, seq140, seq141, seq142, seq143, seq144, seq145, seq146, seq147, seq148, seq149, seq150, seq151, seq152, seq153, seq154, seq155, seq156, seq157, seq158, seq159, seq160, seq161, seq162, seq163, seq164, seq165, seq166, seq167, seq168, seq169, seq170, seq171, seq172, seq173, seq174, seq175, seq176, seq177, seq178, seq179, seq180, seq181, seq182, seq183, seq184, seq185, seq186, seq187, seq188, seq189, seq190, seq191, seq192, seq193, seq194, seq195, seq196, seq197, seq198, seq199, seq200, seq201, seq202, seq203, seq204, seq205, seq206, seq207, seq208, seq209, seq210, seq211, seq212, seq213, seq214, seq215, seq217,
   # add new
   seq220, seq221, seq222, seq223, seq224, seq225, seq226, seq227
 )
+
+## check sequences for agreement
+
+seq_check(contexts_20260723)
 
 #################################################
 
@@ -331,52 +340,52 @@ for (i in 1:length(eratosthenes_rcdates)) {
 
 # other tpq
 
-filicidi_a_rrc_142_1 <- list(id = "filicidi_a_rrc_142_1", assoc = "Filicudi A", samples = seq(-189,-180))
-aleria_t_41_rrc_190_5 <- list(id = "aleria_t_41_rrc_190_5", assoc = "Aleria I T. 41", samples = seq(-169, 158))
-punta_scaletta_ptol_vi <- list(id = "punta_scaletta_ptol_vi", assoc = "Punta Scaletta", samples = seq(-180, -145))
-castro_pretorio_dr1b_cos <- list(id = "castro_pretorio_dr1b_cos", assoc = "CIL 15.4537", samples = -97)
-burriac_dr1b_cos <- list(id = "burriac_dr1b_cos", assoc = "Burriac - Cabrera de Mar",  samples = -90)
-mdg_rrc_235 <- list(id = "mdg_rrc_235", assoc = "Madrague de Giens", samples = -137)
-mdg_rrc_382 <- list(id = "mdg_rrc_382", assoc = "Madrague de Giens", samples = -79)
-mdg_rrc_392 <- list(id = "mdg_rrc_392", assoc = "Madrague de Giens", samples = -75)
-cavaliere_mazard50 <- list(id = "cavaliere_mazard50" , assoc = "Cavalière", samples = seq(-202, -88))
-cavaliere_mazard45 <- list(id = "cavaliere_mazard45" , assoc = "Cavalière", samples = seq(-202, -88))
-cavaliere_mazard41 <- list(id = "cavaliere_mazard41" , assoc = "Cavalière", samples = -206)
-cavaliere_carteia <- list(id = "cavaliere_carteia" , assoc = "Cavalière", samples = -101)
-aleria_tpq_hyp <- list(id = "aleria_tpq_hyp", assoc = "Aleria I T. 19", samples = -450)
-lattara_us_128004_tpq_hyp <- list(id = "lattara_us_128004_tpq_hyp", assoc = "Lattara US 128004", samples = seq(-225,-200))
-lattara_us_128004_tpq_hyp <- list(id = "lattara_us_128004_tpq_hyp", assoc = "Lattara US 128004", samples = seq(-225,-200))
-v_toulouse_fosse40_sup_dr1a_cos <- list(id = "v_toulouse_fosse40_sup_dr1a_cos",
-            assoc = "Veille-Toulouse - Fosse 40 sup.",
+filicidi_a_rrc_142_1 <- list(id = "filicidi_a_rrc_142_1", assoc = "Filicudi A",
+            samples = seq(-189,-180))
+aleria_t_41_rrc_190_5 <- list(id = "aleria_t_41_rrc_190_5", assoc = "Aleria I T. 41",
+            samples = seq(-169, 158))
+punta_scaletta_ptol_vi <- list(id = "punta_scaletta_ptol_vi", assoc = "Punta Scaletta",
+            samples = seq(-180, -145))
+castro_pretorio_dr1b_cos <- list(id = "castro_pretorio_dr1b_cos", assoc = "CIL 15.4537",
+            samples = -97)
+burriac_dr1b_cos <- list(id = "burriac_dr1b_cos", assoc = "Burriac - Cabrera de Mar", 
+            samples = -90)
+mdg_rrc_235 <- list(id = "mdg_rrc_235", assoc = "Madrague de Giens",
+            samples = -137)
+mdg_rrc_382 <- list(id = "mdg_rrc_382", assoc = "Madrague de Giens",
+            samples = -79)
+mdg_rrc_392 <- list(id = "mdg_rrc_392", assoc = "Madrague de Giens",
+            samples = -75)
+cavaliere_mazard50 <- list(id = "cavaliere_mazard50", assoc = "Cavalière",
+            samples = seq(-202, -88))
+cavaliere_mazard45 <- list(id = "cavaliere_mazard45", assoc = "Cavalière",
+            samples = seq(-202, -88))
+cavaliere_mazard41 <- list(id = "cavaliere_mazard41", assoc = "Cavalière",
+            samples = -206)
+cavaliere_carteia <- list(id = "cavaliere_carteia", assoc = "Cavalière",
+            samples = -101)
+aleria_tpq_hyp <- list(id = "aleria_tpq_hyp", assoc = "Aleria I T. 19",
+            samples = -450)
+lattara_us_128004_tpq_hyp <- list(id = "lattara_us_128004_tpq_hyp", assoc = "Lattara US 128004",
+            samples = seq(-225,-200))
+lattara_us_128004_tpq_hyp <- list(id = "lattara_us_128004_tpq_hyp", assoc = "Lattara US 128004",
+            samples = seq(-225,-200))
+v_toulouse_fosse40_sup_dr1a_cos <- list(id = "v_toulouse_fosse40_sup_dr1a_cos", assoc = "Veille-Toulouse - Fosse 40 sup.",
             samples = -103)
-meligunis_lipara_ii_p352_n1 <- list(id = "meligunis_lipara_ii_p352_n1",
-            assoc = "Lipari Necr. Contrada Diana T. 146",
-            type = "coin",
-            samples = -344:-336)
-meligunis_lipara_ii_p352_n2 <- list(id = "meligunis_lipara_ii_p352_n2",
-            assoc = "Lipari Necr. Contrada Diana T. 202",
-            type = "coin",
-            samples = -400:-300)
-meligunis_lipara_ii_p352_n4 <- list(id = "meligunis_lipara_ii_p352_n4",
-            assoc = "Lipari Necr. Contrada Diana T. 303",
-            type = "coin",
-            samples = -400:-300)
-meligunis_lipara_ii_p352_n7 <- list(id = "meligunis_lipara_ii_p352_n7",
-            assoc = "Lipari Necr. Contrada Diana T. 476",
-            type = "coin",
-            samples = -304)
-meligunis_lipara_ii_p352_n8 <- list(id = "meligunis_lipara_ii_p352_n8",
-            assoc = "Lipari Necr. Contrada Diana T. 310",
-            type = "coin",
-            samples = -301)
-meligunis_lipara_ii_p352_n10 <- list(id = "meligunis_lipara_ii_p352_n10",
-            assoc = "Lipari Necr. Contrada Diana T. 114",
-            type = "coin",
-            samples = -225:-216)           
-meligunis_lipara_ii_hyp1 <- list(id = "meligunis_lipara_ii_hyp1",
-            assoc = "Lipari Necr. Contrada Diana T. 424",
-            type = "hypothesis",
-            samples = -470)      
+meligunis_lipara_ii_p352_n1 <- list(id = "meligunis_lipara_ii_p352_n1", assoc = "Lipari Necr. Contrada Diana T. 146",
+            type = "coin", samples = -344:-336)
+meligunis_lipara_ii_p352_n2 <- list(id = "meligunis_lipara_ii_p352_n2", assoc = "Lipari Necr. Contrada Diana T. 202",
+            type = "coin", samples = -400:-300)
+meligunis_lipara_ii_p352_n4 <- list(id = "meligunis_lipara_ii_p352_n4", assoc = "Lipari Necr. Contrada Diana T. 303",
+            type = "coin", samples = -400:-300)
+meligunis_lipara_ii_p352_n7 <- list(id = "meligunis_lipara_ii_p352_n7", assoc = "Lipari Necr. Contrada Diana T. 476",
+            type = "coin", samples = -304)
+meligunis_lipara_ii_p352_n8 <- list(id = "meligunis_lipara_ii_p352_n8", assoc = "Lipari Necr. Contrada Diana T. 310",
+            type = "coin", samples = -301)
+meligunis_lipara_ii_p352_n10 <- list(id = "meligunis_lipara_ii_p352_n10", assoc = "Lipari Necr. Contrada Diana T. 114",
+            type = "coin", samples = -225:-216)           
+meligunis_lipara_ii_hyp1 <- list(id = "meligunis_lipara_ii_hyp1", assoc = "Lipari Necr. Contrada Diana T. 424",
+            type = "hypothesis", samples = -470)      
 
 nonrctpq <- list(
     filicidi_a_rrc_142_1, aleria_t_41_rrc_190_5,punta_scaletta_ptol_vi,burriac_dr1b_cos,mdg_rrc_235,mdg_rrc_382,mdg_rrc_392,cavaliere_mazard50,cavaliere_mazard45,cavaliere_mazard41,aleria_tpq_hyp,lattara_us_128004_tpq_hyp, castro_pretorio_dr1b_cos,cavaliere_carteia,
@@ -398,9 +407,9 @@ burriac_dr1b_cos_taq_hyp <- list(id = "burriac_dr1b_cos_taq_hyp", assoc = "Burri
 aleria_carthage_taq_hyp <- list(id = "aleria_carthage_taq_hyp", assoc = "Aleria II T. 138", samples = -146)
 lattara_us_35236_taq_hyp <- list(id = "lattara_us_35236_taq_hyp", assoc = "Lattara US 35236", samples = seq(-25,-1))
 meligunis_lipara_ii_hyp2 <- list(id = "meligunis_lipara_ii_hyp2",
-            assoc = "Lipari Necr. Contrada Diana T. 131",
+            assoc = "Lipari Necr. Contrada Diana T. 99",
             type = "hypothesis",
-            samples = -100)      
+            samples = -1)      
 
 taq_20260723 <- list(
     carthage_destr_1, gela_destr_1, planier_a_hyp, grand_ribaud_d_hyp,
@@ -410,5 +419,7 @@ taq_20260723 <- list(
 
 #################################################
 
-save(contexts_20260723, taq_20260723, taq_20260723, file = "eda20260723.rda")
+save(contexts_20260723, tpq_20260723, taq_20260723, file = "eda20260723.rda")
+
+
 
