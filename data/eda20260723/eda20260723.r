@@ -409,7 +409,7 @@ lattara_us_35236_taq_hyp <- list(id = "lattara_us_35236_taq_hyp", assoc = "Latta
 meligunis_lipara_ii_hyp2 <- list(id = "meligunis_lipara_ii_hyp2",
             assoc = "Lipari Necr. Contrada Diana T. 99",
             type = "hypothesis",
-            samples = -1)      
+            samples = -1) 
 
 taq_20260723 <- list(
     carthage_destr_1, gela_destr_1, planier_a_hyp, grand_ribaud_d_hyp,
