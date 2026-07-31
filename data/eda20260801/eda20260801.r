@@ -283,10 +283,11 @@ seq227 <- rownames(ser_leptis_magna_theater_necr)
 
 ## horizon - Gnathian style
 seq228 <- c("Lipari Necr. Contrada Diana T. 70", "Horizon - Gnathian", "Lipari Necr. Contrada Diana T. 407")
-seq228 <- c("Aleria II T. 147C", "Horizon - Gnathian", "Aleria II T. 122A")
+seq229 <- c("Aleria II T. 147C", "Horizon - Gnathian", "Aleria II T. 122A")
 
 ## horizon - Campanian A
-seq230 <- c("Aleria II T. 24", "Horizon - Campanian A", "Aleria II T. 150")
+seq230 <- c("Lipari Necr. Contrada Diana T. 461", "Horizon - Campanian A", "Lipari Necr. Contrada Diana T. 444")
+seq231 <- c("Aleria II T. 24", "Horizon - Campanian A", "Aleria II T. 150")
 
 #################################################
 
