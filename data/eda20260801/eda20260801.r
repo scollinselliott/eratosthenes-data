@@ -425,17 +425,26 @@ meligunis_lipara_ii_hyp2 <- list(id = "meligunis_lipara_ii_hyp2",
             assoc = "Lipari Necr. Contrada Diana T. 341",
             type = "hypothesis",
             samples = -1) 
+taq_horizon_gnathian <- list(id = "taq_horizon_gnathian",
+            assoc = "Horizon - Gnathian",
+            type = "hypothesis",
+            samples = -335) 
+taq_campanian_a <- list(id = "taq_campanian_a",
+            assoc = "Horizon - Campanian A",
+            type = "hypothesis",
+            samples = -280) 
+
 
 taq_20260801 <- list(
     carthage_destr_1, gela_destr_1, planier_a_hyp, grand_ribaud_d_hyp,
     burriac_dr1b_cos_taq_hyp,aleria_carthage_taq_hyp,
-    lattara_us_35236_taq_hyp,meligunis_lipara_ii_hyp2
+    lattara_us_35236_taq_hyp,meligunis_lipara_ii_hyp2,
+    taq_horizon_gnathian,taq_campanian_a
 )
 
 #################################################
 
 save(contexts_20260801, tpq_20260801, taq_20260801, file = "eda20260801.rda")
-
 
 # dens_20260801 <- gibbs_ad(contexts_20260801, tpq = tpq_20260801, taq = taq_20260801)
 # save(dens_20260801, file = "dens_20260801.rda")
