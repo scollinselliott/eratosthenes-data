@@ -21,6 +21,9 @@ upload_csv <- function(filename) {
     return(mat)
 }
 
+## new/revised
+ser_meligunis_lipara_ii <- upload_csv("seriations/ser_meligunis_lipara_ii.csv")
+
 ## from eda20251001
 setwd("..")
 ser_lattara <- upload_csv("eda20251001/caa2025_ser_lattara.csv") 
@@ -28,7 +31,6 @@ ser_shipwrecks <- upload_csv("eda20251001/caa2025_ser_shipwrecks.csv")
 
 ## from eda20260723
 ser_aleria <- upload_csv("eda20260723/ser_aleria_20260723.csv") 
-ser_meligunis_lipara_ii <- upload_csv("eda20260723/ser_meligunis_lipara_ii.csv")
 ser_leptis_magna_theater_necr <- upload_csv("eda20260723/ser_leptis_magna_theater_necr.csv")
 
 #################################################
@@ -282,11 +284,11 @@ seq226 <- rownames(ser_meligunis_lipara_ii)
 seq227 <- rownames(ser_leptis_magna_theater_necr)
 
 ## horizon - Gnathian style
-seq228 <- c("Lipari Necr. Contrada Diana T. 70", "Horizon - Gnathian", "Lipari Necr. Contrada Diana T. 407")
+seq228 <- c("Lipari Necr. Contrada Diana T. 230", "Horizon - Gnathian", "Lipari Necr. Contrada Diana T. 314")
 seq229 <- c("Aleria II T. 147C", "Horizon - Gnathian", "Aleria II T. 122A")
 
 ## horizon - Campanian A
-seq230 <- c("Lipari Necr. Contrada Diana T. 461", "Horizon - Campanian A", "Lipari Necr. Contrada Diana T. 444")
+seq230 <- c("Lipari Necr. Contrada Diana T. 315 bis", "Horizon - Campanian A", "Lipari Necr. Contrada Diana T. 444")
 seq231 <- c("Aleria II T. 24", "Horizon - Campanian A", "Aleria II T. 150")
 
 #################################################
@@ -299,6 +301,7 @@ contexts_20260723 <- list(
   # add new
   seq220, seq221, seq222, seq223, seq224, seq225, seq226, seq227
 )
+
 
 ## check sequences for agreement
 
