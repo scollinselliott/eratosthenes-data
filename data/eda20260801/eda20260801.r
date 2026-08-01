@@ -22,16 +22,23 @@ upload_csv <- function(filename) {
 }
 
 ## new/revised
-ser_meligunis_lipara_ii <- upload_csv("seriations/ser_meligunis_lipara_ii.csv")
+setwd("seriations")
+ser_meligunis_lipara_ii <- upload_csv("ser_meligunislipara2.csv")
 
 ## from eda20251001
-setwd("..")
-ser_lattara <- upload_csv("eda20251001/caa2025_ser_lattara.csv") 
-ser_shipwrecks <- upload_csv("eda20251001/caa2025_ser_shipwrecks.csv")
+setwd("../..")
+setwd("eda20251001")
+ser_lattara <- upload_csv("caa2025_ser_lattara.csv") 
+ser_shipwrecks <- upload_csv("caa2025_ser_shipwrecks.csv")
 
-## from eda20260723
-ser_aleria <- upload_csv("eda20260723/ser_aleria_20260723.csv") 
-ser_leptis_magna_theater_necr <- upload_csv("eda20260723/ser_leptis_magna_theater_necr.csv")
+## from eda20260801
+setwd("..")
+setwd("eda20260723")
+ser_aleria <- upload_csv("ser_aleria_20260723.csv") 
+ser_leptis_magna_theater_necr <- upload_csv("ser_leptis_magna_theater_necr.csv")
+
+setwd("..")
+setwd("eda20260801")
 
 #################################################
 
@@ -295,16 +302,17 @@ seq231 <- c("Aleria II T. 24", "Horizon - Campanian A", "Aleria II T. 150")
 
 ## compile all sequences into list
 
-contexts_20260723 <- list(
+contexts_20260801 <- list(
   # from caa2025
   seq001, seq002, seq003, seq004, seq005, seq006, seq007, seq008, seq009, seq010, seq011, seq012, seq013, seq014, seq015, seq016, seq017, seq018, seq019, seq020, seq021, seq022, seq023, seq024, seq025, seq026, seq027, seq028, seq029, seq030, seq031, seq032, seq033, seq034, seq035, seq036, seq037, seq038, seq039, seq040, seq041, seq042, seq043, seq044, seq045, seq046, seq047, seq048, seq049, seq050, seq051, seq052, seq053, seq054, seq055, seq056, seq057, seq058, seq059, seq060, seq061, seq062, seq063, seq064, seq065, seq066, seq067, seq068, seq069, seq070, seq071, seq072, seq073, seq074, seq075, seq076, seq077, seq078, seq079, seq080, seq081, seq082, seq083, seq084, seq085, seq086, seq087, seq088, seq089, seq090, seq091, seq092, seq093, seq094, seq095, seq096, seq097, seq098, seq099, seq100, seq101, seq102, seq103, seq104, seq105, seq106, seq107, seq108, seq109, seq110, seq111, seq112, seq113, seq114, seq115, seq116, seq117, seq118, seq119, seq120, seq121, seq122, seq123, seq124, seq125, seq126, seq127, seq128, seq129, seq130, seq131, seq132, seq133, seq134, seq135, seq136, seq137, seq138, seq139, seq140, seq141, seq142, seq143, seq144, seq145, seq146, seq147, seq148, seq149, seq150, seq151, seq152, seq153, seq154, seq155, seq156, seq157, seq158, seq159, seq160, seq161, seq162, seq163, seq164, seq165, seq166, seq167, seq168, seq169, seq170, seq171, seq172, seq173, seq174, seq175, seq176, seq177, seq178, seq179, seq180, seq181, seq182, seq183, seq184, seq185, seq186, seq187, seq188, seq189, seq190, seq191, seq192, seq193, seq194, seq195, seq196, seq197, seq198, seq199, seq200, seq201, seq202, seq203, seq204, seq205, seq206, seq207, seq208, seq209, seq210, seq211, seq212, seq213, seq214, seq215, seq217,
   # add new
-  seq220, seq221, seq222, seq223, seq224, seq225, seq226, seq227, seq228, seq229, seq230, seq231
+  seq220, seq221, seq222, seq223, seq224, seq225, seq226, #seq227, 
+  seq228, seq229, seq230, seq231
 )
 
 ## check sequences for agreement
 
-seq_check(contexts_20260723)
+seq_check(contexts_20260801)
 
 #################################################
 
@@ -400,7 +408,7 @@ nonrctpq <- list(
     meligunis_lipara_ii_hyp1
     )
 
-tpq_20260723 <- c(tpq_info, nonrctpq)
+tpq_20260801 <- c(tpq_info, nonrctpq)
 
 #################################################
 
@@ -418,7 +426,7 @@ meligunis_lipara_ii_hyp2 <- list(id = "meligunis_lipara_ii_hyp2",
             type = "hypothesis",
             samples = -1) 
 
-taq_20260723 <- list(
+taq_20260801 <- list(
     carthage_destr_1, gela_destr_1, planier_a_hyp, grand_ribaud_d_hyp,
     burriac_dr1b_cos_taq_hyp,aleria_carthage_taq_hyp,
     lattara_us_35236_taq_hyp,meligunis_lipara_ii_hyp2
@@ -426,7 +434,11 @@ taq_20260723 <- list(
 
 #################################################
 
-save(contexts_20260723, tpq_20260723, taq_20260723, file = "eda20260723.rda")
+save(contexts_20260801, tpq_20260801, taq_20260801, file = "eda20260801.rda")
+
+
+# dens_20260801 <- gibbs_ad(contexts_20260801, tpq = tpq_20260801, taq = taq_20260801)
+# save(dens_20260801, file = "dens_20260801.rda")
 
 
 
