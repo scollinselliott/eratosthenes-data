@@ -432,7 +432,7 @@ taq_horizon_gnathian <- list(id = "taq_horizon_gnathian",
 taq_campanian_a <- list(id = "taq_campanian_a",
             assoc = "Horizon - Campanian A",
             type = "hypothesis",
-            samples = -280) 
+            samples = -200) 
 
 
 taq_20260801 <- list(
