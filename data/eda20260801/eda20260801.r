@@ -14,10 +14,14 @@ library(Bchron)
 # upload serations from csv
 
 upload_csv <- function(filename) {
-    mat <- read.csv(filename, header = TRUE)
-    rownames(mat) <- mat$Context
-    mat$Context <- NULL
-    mat <- as.matrix(mat)
+    mat <- read.csv(filename, header = FALSE)
+    namesr <- mat[,1]
+    namesc <- mat[1,]
+    mat <- mat[-1,]
+    mat[,1] <- NULL
+    mat <- as.matrix(sapply(mat, as.numeric))
+    rownames(mat) <- namesr[-1]
+    colnames(mat) <- unlist(namesc[-1])
     return(mat)
 }
 
@@ -412,6 +416,9 @@ meligunis_lipara_ii_hyp1 <- list(id = "meligunis_lipara_ii_hyp1", assoc = "Lipar
             type = "hypothesis", samples = -470)      
 lattara_us_35508_tpq_hyp <- list(id = "lattara_us_35508_tpq_hyp", assoc = "Lattara US 35508",
             type = "hypothesis", samples = -150)      
+lattara_us_30049_tpq_hyp <- list(id = "lattara_us_30049_tpq_hyp", assoc = "Lattara US 30049",
+            type = "hypothesis", samples = -100)     
+
 
 nonrctpq <- list(
     filicidi_a_rrc_142_1, aleria_t_41_rrc_190_5,punta_scaletta_ptol_vi,burriac_dr1b_cos,mdg_rrc_235,mdg_rrc_382,mdg_rrc_392,cavaliere_mazard50,cavaliere_mazard45,cavaliere_mazard41,aleria_tpq_hyp,lattara_us_128004_tpq_hyp, castro_pretorio_dr1b_cos,cavaliere_carteia,lattara_us_35508_tpq_hyp,
