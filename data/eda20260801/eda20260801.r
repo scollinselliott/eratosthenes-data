@@ -394,8 +394,6 @@ aleria_tpq_hyp <- list(id = "aleria_tpq_hyp", assoc = "Aleria I T. 19",
             samples = -450)
 lattara_us_128004_tpq_hyp <- list(id = "lattara_us_128004_tpq_hyp", assoc = "Lattara US 128004",
             samples = seq(-225,-200))
-lattara_us_128004_tpq_hyp <- list(id = "lattara_us_128004_tpq_hyp", assoc = "Lattara US 128004",
-            samples = seq(-225,-200))
 v_toulouse_fosse40_sup_dr1a_cos <- list(id = "v_toulouse_fosse40_sup_dr1a_cos", assoc = "Veille-Toulouse - Fosse 40 sup.",
             samples = -103)
 meligunis_lipara_ii_p352_n1 <- list(id = "meligunis_lipara_ii_p352_n1", assoc = "Lipari Necr. Contrada Diana T. 146",
@@ -412,6 +410,8 @@ meligunis_lipara_ii_p352_n10 <- list(id = "meligunis_lipara_ii_p352_n10", assoc 
             type = "coin", samples = -225:-216)           
 meligunis_lipara_ii_hyp1 <- list(id = "meligunis_lipara_ii_hyp1", assoc = "Lipari Necr. Contrada Diana T. 424",
             type = "hypothesis", samples = -470)      
+lattara_us_35508_tpq_hyp <- list(id = "lattara_us_35508_tpq_hyp", assoc = "Lattara US 35508",
+            type = "hypothesis", samples = -150)      
 
 nonrctpq <- list(
     filicidi_a_rrc_142_1, aleria_t_41_rrc_190_5,punta_scaletta_ptol_vi,burriac_dr1b_cos,mdg_rrc_235,mdg_rrc_382,mdg_rrc_392,cavaliere_mazard50,cavaliere_mazard45,cavaliere_mazard41,aleria_tpq_hyp,lattara_us_128004_tpq_hyp, castro_pretorio_dr1b_cos,cavaliere_carteia,
